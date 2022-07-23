@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.btn {
+  border-radius:5px;
+  position: fixed;
+  top: 20px;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+  box-shadow: 0  5px rgb(105, 104, 104);
+}
+.btn:active {
+  transform: translateY(2px);
+  box-shadow:none;
+}
+.btn:focus {
+  outline: none;
+}
+ .boxes {
+  width: 500px;
+  height: 500px;
+   display: flex; 
+   justify-content: space-around;
+  align-content: space-around; 
+  flex-wrap: wrap;
+  position: relative;
+  transition:  0.4s ease;
+} 
+.boxes.big {
+  width: 600px;
+  height: 600px;
+}
+ .box {
+  width: 125px;
+  height: 125px;
+  background-color: pink;
+  background: url(./IMG_20191019_213052.jpg) no-repeat;
+  background-size: 500px;
+  position: relative;
+  transition:  0.4s ease;
+}
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+.box::after {
+  content: '';
+  width: 15px;
+  height: 125px;
+  background-color: rgb(81, 79, 80);
+  position: absolute;
+  top:8px;
+  right: -15px;
+  transform: skewY(45deg);
+}
+.box::before {
+  content: '';
+  width: 125px;
+  height: 15.1px;
+  background-color: rgb(25, 25, 25);
+  position: absolute;
+  bottom:-15px;
+  left: 8px;
+  transform: skewX(45deg);
+}
